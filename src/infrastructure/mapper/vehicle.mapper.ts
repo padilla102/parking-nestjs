@@ -1,4 +1,4 @@
-import Vehicle from "src/domain/vehicle";
+import Vehicle from "src/domain/dtos/vehicle";
 import { VehicleEntity } from "../adapters/repository/entities/vehicle.entity";
 
 export default class VehicleMapper{

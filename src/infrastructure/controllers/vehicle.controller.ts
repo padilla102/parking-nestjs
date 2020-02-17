@@ -12,7 +12,8 @@ import GetByIdUseCase from 'src/application/vehicle/getById.usecase';
 import CreateUseCase from 'src/application/vehicle/create.usecase';
 import UpdateUseCase from 'src/application/vehicle/update.usecase';
 import DeleteUseCase from 'src/application/vehicle/delete.usecase';
-import Vehicle from 'src/domain/vehicle';
+import Vehicle from 'src/domain/dtos/vehicle';
+import VehicleMapper from '../mapper/vehicle.mapper';
 
 @Controller('vehicle')
 export default class VehicleController {

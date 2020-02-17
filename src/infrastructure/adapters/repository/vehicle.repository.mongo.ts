@@ -3,7 +3,7 @@ import { VehicleRepository } from "../../../domain/ports/vehicle.repository";
 import { InjectModel } from '@nestjs/mongoose';
 import { VehicleEntity } from './entities/vehicle.entity';
 import { Model } from "mongoose";
-import Vehicle from 'src/domain/vehicle';
+import Vehicle from 'src/domain/dtos/vehicle';
 import VehicleMapper from 'src/infrastructure/mapper/vehicle.mapper';
 
 @Injectable()
