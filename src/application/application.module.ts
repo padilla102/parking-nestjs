@@ -6,7 +6,7 @@ import VehicleSchema from 'src/infrastructure/adapters/repository/schemas/vehicl
 @Module({
   imports: [
     VehicleModule,
-    MongooseModule.forFeature([{ name: 'Product', schema: VehicleSchema }])
+    MongooseModule.forFeature([{ name: 'Vehicle', schema: VehicleSchema }])
   ],
   exports:[VehicleModule]
 })

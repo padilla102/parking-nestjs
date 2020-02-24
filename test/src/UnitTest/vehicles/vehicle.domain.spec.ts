@@ -1,4 +1,4 @@
-import Vehicle from "../../../../src/domain/dtos/vehicle";
+import Vehicle from "../../../../src/domain/dto/vehicle";
 
 describe('VehicleDomain', () =>{
     const vehicle = new Vehicle('5e4307dc1070db3c3c909cbc','ABC123', 1600, "1", new Date(), new Date());

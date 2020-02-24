@@ -1,4 +1,10 @@
 import { Module } from '@nestjs/common';
+import ServiceModule from './services/service.module';
 
-@Module({})
+@Module({
+    imports:[
+        ServiceModule,
+    ],
+    exports:[ServiceModule]
+})
 export class DomainModule {}

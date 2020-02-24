@@ -1,4 +1,4 @@
-export default class Vehicle {
+export default class VehicleResponse {
     private id: string;
     private placa: string;
     private cylinder: number;
@@ -53,7 +53,7 @@ export default class Vehicle {
     public getCreatedAt(): Date{
         return this.createdAt;
     }
-    public setCreatedAt(createdAt): Date{
+    public setCreatedAt(createdAt:Date){
         this.createdAt = createdAt;
     }
 

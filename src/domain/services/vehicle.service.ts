@@ -1,14 +1,31 @@
-import Vehicle from "../dtos/vehicle";
+import VehicleRequest from "../dto/useCaseRequests/vehicleRequest";
+import VehicleResponse from "../dto/useCaseResponses/vehicleResponse";
+import { VehicleRepository } from "../../domain/ports/vehicle.repository";
+
 
 export default class VehicleService {
+    constructor(
+        private vehicleRepository: VehicleRepository
+    ){}
+    
+    public async Create(vehicleReq:VehicleRequest): Promise<VehicleResponse>{
+        return await this.vehicleRepository.create(vehicleReq);
+    }
 
-    public valid(vehicle: Vehicle):Vehicle{
+    public async GetById(id:string): Promise<VehicleResponse>{
+        return await this.vehicleRepository.getById(id);
+    }
 
-        if(!this.ValidPlaca(vehicle.getPlaca())){
-            throw 'Placa Invalida ' + vehicle.getPlaca();
-        }
+    public async GetAll(): Promise<VehicleResponse[]>{
+        return await this.vehicleRepository.getAll();
+    }
 
-        return vehicle;
+    public async Update(id:string, vehicleReq:VehicleRequest): Promise<VehicleResponse>{
+        return await this.vehicleRepository.update(id,vehicleReq);
+    }
+
+    public async Delete(id:string): Promise<VehicleResponse>{
+        return await this.vehicleRepository.delete(id);
     }
 
 

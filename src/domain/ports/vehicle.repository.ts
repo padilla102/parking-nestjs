@@ -1,14 +1,15 @@
-import Vehicle from "../vehicle";
+import VehicleResponse from "../dto/useCaseResponses/vehicleResponse";
+import vehicleRequest from "../dto/useCaseRequests/vehicleRequest";
 
 
 export interface VehicleRepository{
-    getAll(): Promise<Vehicle[]>;
+    getAll(): Promise<VehicleResponse[]>;
 
-    getById(id:string): Promise<Vehicle>;
+    getById(id:string): Promise<VehicleResponse>;
 
-    create(vehicle: Vehicle): Promise<Vehicle>;
+    create(vehicleRequest: vehicleRequest): Promise<VehicleResponse>;
 
-    update(id:string, vehicle: Vehicle): Promise<Vehicle>;
+    update(id:string, vehicleRequest: vehicleRequest): Promise<VehicleResponse>;
 
-    delete(id:string): Promise<Vehicle>;
+    delete(id:string): Promise<VehicleResponse>;
 }

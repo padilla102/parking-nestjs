@@ -1,9 +1,9 @@
-import Vehicle from "src/domain/dtos/vehicle";
+import VehicleResponse from "src/domain/dto/useCaseResponses/vehicleResponse";
 import { VehicleEntity } from "../adapters/repository/entities/vehicle.entity";
 
 export default class VehicleMapper{
-    public static toDomain(vehicleEntity: VehicleEntity): Vehicle{
-        return new Vehicle(
+    public static toDomain(vehicleEntity: VehicleEntity): VehicleResponse{
+        return new VehicleResponse(
             vehicleEntity._id,
             vehicleEntity.placa,
             vehicleEntity.cylinder,
@@ -13,8 +13,8 @@ export default class VehicleMapper{
         )
     }
 
-    public static toDomains(vehiclesEntity: VehicleEntity[]): Vehicle[] {
-        const vehicles = new Array<Vehicle>();
+    public static toDomains(vehiclesEntity: VehicleEntity[]): VehicleResponse[] {
+        const vehicles = new Array<VehicleResponse>();
         vehiclesEntity.forEach(vehicleEntity => {
             const vehicle = this.toDomain(vehicleEntity);
             vehicles.push(vehicle);
